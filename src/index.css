@@ -1,40 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* NAMASTE Terminology Mapping Portal Design System */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Clinical Light Mode - Professional & Trustworthy */
+    --background: 0 0% 97.3%; /* #F8F9FA */
+    --foreground: 210 11% 15%; /* #212529 */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%; /* #FFFFFF */
+    --card-foreground: 210 11% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 210 11% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 223 89% 56.1%; /* #2A64F5 */
+    --primary-foreground: 0 0% 100%;
 
     --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 11% 15%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 154 72% 51%; /* #198754 - Success Green */
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 223 89% 56.1%;
+
+    --radius: 0.5rem;
+
+    /* Medical UI Specific Tokens */
+    --medical-success: 154 72% 51%; /* #198754 */
+    --medical-warning: 45 93% 47%;
+    --medical-info: 223 89% 56.1%;
+    --medical-surface: 0 0% 100%;
+    --medical-elevation: 0 0% 100%;
+    
+    /* Confidence Score Gradients */
+    --confidence-high: 154 72% 51%;
+    --confidence-medium: 45 93% 47%;
+    --confidence-low: 0 84.2% 60.2%;
+
+    /* Clinical Shadows */
+    --shadow-medical: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-medical-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 
     --radius: 0.5rem;
 
@@ -56,33 +75,45 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Clinical Dark Mode - Low Strain & Sophisticated */
+    --background: 0 0% 7.1%; /* #121212 */
+    --foreground: 0 0% 91.8%; /* #EAEAEA */
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 11.8%; /* #1E1E1E */
+    --card-foreground: 0 0% 91.8%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 11.8%;
+    --popover-foreground: 0 0% 91.8%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 223 89% 70.2%; /* #5D8BF4 */
+    --primary-foreground: 0 0% 7.1%;
 
     --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary-foreground: 0 0% 91.8%;
 
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 162 73% 46%; /* #20C997 - Vibrant Teal/Green */
+    --accent-foreground: 0 0% 7.1%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 91.8%;
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --ring: 223 89% 70.2%;
+
+    /* Medical UI Dark Tokens */
+    --medical-success: 162 73% 46%; /* #20C997 */
+    --medical-warning: 45 93% 58%;
+    --medical-info: 223 89% 70.2%;
+    --medical-surface: 0 0% 11.8%;
+    --medical-elevation: 0 0% 15.7%;
+    
+    /* Clinical Shadows for Dark Mode */
+    --shadow-medical: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+    --shadow-medical-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -100,6 +131,74 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter;
+  }
+}
+
+@layer components {
+  /* Medical Button Variants */
+  .btn-medical {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 shadow-sm;
+  }
+  
+  .btn-medical-success {
+    @apply bg-accent text-accent-foreground hover:bg-accent/90 transition-all duration-200;
+  }
+  
+  .btn-medical-outline {
+    @apply border border-primary text-primary bg-background hover:bg-primary hover:text-primary-foreground transition-all duration-200;
+  }
+
+  /* Medical Card Styles */
+  .card-medical {
+    @apply bg-card text-card-foreground rounded-lg border shadow-sm hover:shadow-md transition-all duration-200;
+  }
+  
+  .card-medical-elevated {
+    @apply bg-card text-card-foreground rounded-lg border-0 transition-all duration-200;
+    box-shadow: var(--shadow-medical);
+  }
+  
+  .card-medical-elevated:hover {
+    box-shadow: var(--shadow-medical-lg);
+  }
+
+  /* Confidence Score Bars */
+  .confidence-bar {
+    @apply w-full h-2 bg-muted rounded-full overflow-hidden;
+  }
+  
+  .confidence-fill-high {
+    background: hsl(var(--confidence-high));
+  }
+  
+  .confidence-fill-medium {
+    background: hsl(var(--confidence-medium));
+  }
+  
+  .confidence-fill-low {
+    background: hsl(var(--confidence-low));
+  }
+
+  /* Navigation Active States */
+  .nav-active {
+    @apply text-primary border-b-2 border-primary;
+  }
+  
+  .nav-inactive {
+    @apply text-muted-foreground hover:text-foreground transition-colors duration-200;
+  }
+
+  /* Medical Status Pills */
+  .status-pending {
+    @apply bg-yellow-100 text-yellow-800 dark:bg-yellow-900/20 dark:text-yellow-300;
+  }
+  
+  .status-approved {
+    @apply bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-300;
+  }
+  
+  .status-auto {
+    @apply bg-blue-100 text-blue-800 dark:bg-blue-900/20 dark:text-blue-300;
   }
 }

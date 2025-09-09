@@ -13,6 +13,9 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        inter: ['Inter', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -56,6 +59,18 @@ export default {
           "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
+        },
+        medical: {
+          success: "hsl(var(--medical-success))",
+          warning: "hsl(var(--medical-warning))",
+          info: "hsl(var(--medical-info))",
+          surface: "hsl(var(--medical-surface))",
+          elevation: "hsl(var(--medical-elevation))",
+        },
+        confidence: {
+          high: "hsl(var(--confidence-high))",
+          medium: "hsl(var(--confidence-medium))",
+          low: "hsl(var(--confidence-low))",
         },
       },
       borderRadius: {
