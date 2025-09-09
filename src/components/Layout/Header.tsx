@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Sun, Moon, User, LogOut, Settings } from "lucide-react"
+import { Link, useLocation } from "react-router-dom"
 import { useTheme } from "../ThemeProvider"
 import { Button } from "@/components/ui/button"
 import {
@@ -12,17 +13,17 @@ import {
 } from "@/components/ui/dropdown-menu"
 
 const navigationTabs = [
-  { id: "search", label: "Search & Map", active: true },
-  { id: "codesystems", label: "CodeSystems", active: false },
-  { id: "conceptmaps", label: "ConceptMaps", active: false },
-  { id: "fhir", label: "FHIR Bundles", active: false },
-  { id: "analytics", label: "Analytics Dashboard", active: false },
-  { id: "about", label: "About", active: false },
+  { id: "search", label: "Search & Map", path: "/" },
+  { id: "codesystems", label: "CodeSystems", path: "/codesystems" },
+  { id: "conceptmaps", label: "ConceptMaps", path: "/conceptmaps" },
+  { id: "fhir", label: "FHIR Bundles", path: "/fhir" },
+  { id: "analytics", label: "Analytics Dashboard", path: "/analytics" },
+  { id: "about", label: "About", path: "/about" },
 ]
 
 export function Header() {
   const { theme, setTheme } = useTheme()
-  const [activeTab, setActiveTab] = useState("search")
+  const location = useLocation()
 
   const toggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light")
@@ -46,17 +47,17 @@ export function Header() {
           {/* Navigation Tabs */}
           <nav className="hidden md:flex items-center space-x-6">
             {navigationTabs.map((tab) => (
-              <button
+              <Link
                 key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
+                to={tab.path}
                 className={`px-3 py-2 text-sm font-medium transition-colors duration-200 border-b-2 ${
-                  activeTab === tab.id
+                  location.pathname === tab.path
                     ? "nav-active"
                     : "nav-inactive border-transparent"
                 }`}
               >
                 {tab.label}
-              </button>
+              </Link>
             ))}
           </nav>
 
