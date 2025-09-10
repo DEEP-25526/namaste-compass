@@ -36,10 +36,9 @@ export function Header() {
           {/* Logo and Title */}
           <div className="flex items-center space-x-3">
             <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <span className="bg-transparent">
-                <a  target="_blank "class=" text-white text-bold" >
+              <span>
+                <a target="_blank" className="text-white font-bold">
                   न
-                  
                 </a>
               </span>
             </div>
