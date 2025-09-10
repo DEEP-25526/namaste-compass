@@ -1,8 +1,8 @@
-import { useState } from "react"
-import { Sun, Moon, User, LogOut, Settings } from "lucide-react"
-import { Link, useLocation } from "react-router-dom"
-import { useTheme } from "../ThemeProvider"
-import { Button } from "@/components/ui/button"
+import { useState } from "react";
+import { Sun, Moon, User, LogOut, Settings } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
+import { useTheme } from "../ThemeProvider";
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,7 +10,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu";
 
 const navigationTabs = [
   { id: "search", label: "Search & Map", path: "/" },
@@ -19,15 +19,15 @@ const navigationTabs = [
   { id: "fhir", label: "FHIR Bundles", path: "/fhir" },
   { id: "analytics", label: "Analytics Dashboard", path: "/analytics" },
   { id: "about", label: "About", path: "/about" },
-]
+];
 
 export function Header() {
-  const { theme, setTheme } = useTheme()
-  const location = useLocation()
+  const { theme, setTheme } = useTheme();
+  const location = useLocation();
 
   const toggleTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light")
-  }
+    setTheme(theme === "light" ? "dark" : "light");
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b">
@@ -36,11 +36,18 @@ export function Header() {
           {/* Logo and Title */}
           <div className="flex items-center space-x-3">
             <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">न</span>
+              <span className="bg-transparent">
+                <a  target="_blank "class=" text-white text-bold" >
+                  न
+                  
+                </a>
+              </span>
             </div>
             <div>
               <h1 className="text-lg font-semibold text-foreground">NAMASTE</h1>
-              <p className="text-xs text-muted-foreground">Terminology Mapping</p>
+              <p className="text-xs text-muted-foreground">
+                Terminology Mapping
+              </p>
             </div>
           </div>
 
@@ -109,5 +116,5 @@ export function Header() {
         </div>
       </div>
     </header>
-  )
+  );
 }
